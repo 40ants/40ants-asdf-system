@@ -39,15 +39,25 @@
 
 (defsection @usage (:title "Usage"
                     :ignore-words ("ASDF:PACKAGE-INFERRED-SYSTEM"
-                                   "ASDF"))
+                                   "ASDF"
+                                   "40A"))
   "
-This system provides a base class for ASDF systems of 40Ants.
+This system provides a base class for ASDF systems of `40Ants`.
 This ASDF system class inherits from ASDF:PACKAGE-INFERRED-SYSTEM class. This class
 reads its version from the src/changelog.lisp file. Thus, ASDF system version
 stored in the one place and always correct.
 
 To use this class, mention it in the ASDF system definition like this:
 
+```
+(defsystem log4cl-extras
+  :name \"log4cl-extras\"
+  :author \"Alexander Artemenko\"
+  :license \"BSD\"
+  :class :40ants-asdf-system
+  :defsystem-depends-on (\"40ants-asdf-system\")
+  ...
+```
  
 "
   (asdf/interface::40ants-asdf-system system))

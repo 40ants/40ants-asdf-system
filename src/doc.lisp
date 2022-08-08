@@ -9,6 +9,8 @@
                 #:defsection-copy)
   (:import-from #:40ants-asdf-system/changelog
                 #:@changelog)
+  (:import-from #:40ants-asdf-system
+                #:@usage)
   (:import-from #:docs-config
                 #:docs-config)
   (:export #:@index
@@ -19,7 +21,7 @@
 (in-readtable pythonic-string-syntax)
 
 
-(defmethod docs-config ((system (eql (asdf:find-system "log4cl-extras"))))
+(defmethod docs-config ((system (eql (asdf:find-system "40ants-asdf-system"))))
   ;; 40ANTS-DOC-THEME-40ANTS system will bring
   ;; as dependency a full 40ANTS-DOC but we don't want
   ;; unnecessary dependencies here:
@@ -39,11 +41,12 @@
                                    "THIS-CONSOLE"
                                    "DAILY"
                                    "FILE"))
-  (log4cl-extras system)
+  (40ants-asdf-system system)
   "
-[![](https://github-actions.40ants.com/40ants/log4cl-extras/matrix.svg?only=ci.run-tests)](https://github.com/40ants/log4cl-extras/actions)
+[![](https://github-actions.40ants.com/40ants/40ants-asdf-system/matrix.svg?only=ci.run-tests)](https://github.com/40ants/40ants-asdf-system/actions)
 "
-  (@installation section))
+  (@installation section)
+  (@usage section))
 
 
 (defsection-copy @readme @index)
