@@ -44,6 +44,8 @@
   (40ants-asdf-system system)
   "
 [![](https://github-actions.40ants.com/40ants/40ants-asdf-system/matrix.svg?only=ci.run-tests)](https://github.com/40ants/40ants-asdf-system/actions)
+
+![Quicklisp](http://quickdocs.org/badge/40ants-asdf-system.svg)
 "
   (@installation section)
   (@usage section))
