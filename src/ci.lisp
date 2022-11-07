@@ -24,7 +24,7 @@
           :quicklisp "ultralisp"
           ;; ("ultralisp"
           ;;  "quicklisp")
-          :lisp "ccl-bin/1.12"
+          :lisp "ccl-bin"
           ;; ("sbcl"
           ;;  "ccl-bin"
           ;;  "ecl")
