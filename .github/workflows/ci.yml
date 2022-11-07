@@ -96,7 +96,7 @@
           ],
           "lisp": [
             "sbcl",
-            "ccl",
+            "ccl-bin",
             "ecl"
           ]
         }
