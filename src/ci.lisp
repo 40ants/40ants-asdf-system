@@ -18,13 +18,16 @@
   :cache t
   :jobs ((linter)
          (run-tests
-          :os ("ubuntu-latest"
-               "macos-latest")
-          :quicklisp ("ultralisp"
-                      "quicklisp")
-          :lisp ("sbcl"
-                 "ccl-bin"
-                 "ecl")
+          :os "ubuntu-latest"
+          ;; ("ubuntu-latest"
+          ;;  "macos-latest")
+          :quicklisp "ultralisp"
+          ;; ("ultralisp"
+          ;;  "quicklisp")
+          :lisp "ccl-bin"
+          ;; ("sbcl"
+          ;;  "ccl-bin"
+          ;;  "ecl")
           :coverage t)))
 
 
