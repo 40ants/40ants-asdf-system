@@ -24,11 +24,12 @@
           :quicklisp "ultralisp"
           ;; ("ultralisp"
           ;;  "quicklisp")
-          :lisp "ccl-bin"
+          :lisp "ccl-bin/1.12"
           ;; ("sbcl"
           ;;  "ccl-bin"
           ;;  "ecl")
-          :coverage t)))
+          ;; :coverage t
+          )))
 
 
 (defworkflow docs
