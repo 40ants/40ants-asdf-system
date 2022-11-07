@@ -6,6 +6,7 @@
 
 
 (defchangelog (:ignore-words ("SLY"
+                              "ASDF"
                               "REPL"
                               "HTTP"))
   (0.2.0 2022-11-07
