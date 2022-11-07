@@ -87,7 +87,7 @@
       "env": {
         "OS": "ubuntu-latest",
         "QUICKLISP_DIST": "ultralisp",
-        "LISP": "ccl-bin"
+        "LISP": "ccl-bin/1.12"
       },
       "steps": [
         {
