@@ -1,4 +1,4 @@
-<a id="x-2840ANTS-ASDF-SYSTEM-2FDOC-3A-40README-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FINDEX-3A-40README-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 # 40ANTS-ASDF-SYSTEM - Base ASDF system for all 40Ants projects.
 
@@ -18,7 +18,9 @@
 
 [![](https://github-actions.40ants.com/40ants/40ants-asdf-system/matrix.svg?only=ci.run-tests)][0d83]
 
-<a id="x-2840ANTS-ASDF-SYSTEM-2FDOC-3A-3A-40INSTALLATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+![](http://quickdocs.org/badge/40ants-asdf-system.svg)
+
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FINDEX-3A-3A-40INSTALLATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## Installation
 

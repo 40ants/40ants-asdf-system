@@ -1,8 +1,19 @@
-<a id="x-2840ANTS-ASDF-SYSTEM-2FCHANGELOG-3A-40CHANGELOG-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-40CHANGELOG-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 # ChangeLog
 
-<a id="x-2840ANTS-ASDF-SYSTEM-2FCHANGELOG-3A-3A-7C0-2E1-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E2-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.2.0 (2022-11-07)
+
+* System was made non-package-inferred, to obliterate
+"Computing just-done stamp ... but dependency ... wasn't done yet!" `ASDF` warnings.
+
+You will find more information about this warning in this issue:
+
+https://gitlab.common-lisp.net/asdf/asdf/-/issues/132
+
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E1-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.1.0 (2022-08-07)
 
