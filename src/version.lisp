@@ -1,6 +1,4 @@
-(uiop:define-package #:40ants-asdf-system/version
-  (:use #:cl))
-(in-package #:40ants-asdf-system/version)
+(in-package #:40ants-asdf-system)
 
 
 (defun read-file-forms (filename)

@@ -1,10 +1,3 @@
-(uiop:define-package #:40ants-asdf-system
-  (:use #:cl)
-  (:import-from #:40ants-asdf-system/version
-                #:extract-version-from-changelog)
-  (:import-from #:40ants-doc
-                #:defsection)
-  (:nicknames #:40ants-asdf/system/system))
 (in-package #:40ants-asdf-system)
 
 
@@ -35,29 +28,3 @@
                      (setf (slot-value system 'version-from-changelog)
                            version)))))))
 
-
-
-(defsection @usage (:title "Usage"
-                    :ignore-words ("ASDF:PACKAGE-INFERRED-SYSTEM"
-                                   "ASDF"
-                                   "40A"))
-  "
-This system provides a base class for ASDF systems of `40Ants`.
-This ASDF system class inherits from ASDF:PACKAGE-INFERRED-SYSTEM class. This class
-reads its version from the src/changelog.lisp file. Thus, ASDF system version
-stored in the one place and always correct.
-
-To use this class, mention it in the ASDF system definition like this:
-
-```
-(defsystem log4cl-extras
-  :name \"log4cl-extras\"
-  :author \"Alexander Artemenko\"
-  :license \"BSD\"
-  :class :40ants-asdf-system
-  :defsystem-depends-on (\"40ants-asdf-system\")
-  ...
-```
- 
-"
-  (asdf/interface::40ants-asdf-system system))

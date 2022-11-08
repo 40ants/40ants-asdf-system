@@ -23,7 +23,7 @@
           :quicklisp ("ultralisp"
                       "quicklisp")
           :lisp ("sbcl"
-                 "ccl-bin/1.12.1"
+                 "ccl"
                  "ecl")
           :coverage t)))
 
@@ -33,4 +33,4 @@
   :on-pull-request t
   :by-cron "0 10 * * 1"
   :cache t 
-  :jobs ((build-docs :asdf-system "40ants-asdf-system/doc")))
+  :jobs ((build-docs :asdf-system "40ants-asdf-system-docs")))
