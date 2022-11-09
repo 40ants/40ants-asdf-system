@@ -108,12 +108,12 @@
           ],
           "exclude": [
             {
-              "os": "ubuntu",
+              "os": "ubuntu-latest",
               "quicklisp": "ultralisp",
               "lisp": "npt"
             },
             {
-              "os": "ubuntu",
+              "os": "ubuntu-latest",
               "quicklisp": "quicklisp",
               "lisp": "npt"
             }

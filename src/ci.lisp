@@ -37,8 +37,8 @@
                  "npt"
                  "ecl")
           ;; These combinations are failed for some reason:
-          :exclude ((:os "ubuntu" :quicklisp "ultralisp" :lisp "npt")
-                    (:os "ubuntu" :quicklisp "quicklisp" :lisp "npt"))
+          :exclude ((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
+                    (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
           :coverage t)))
 
 
