@@ -135,6 +135,11 @@
             "asdf-system": "40ants-asdf-system",
             "coveralls-token": "${{ secrets.github_token }}"
           }
+        },
+        {
+          "name": "Test OUTPUT",
+          "run": "echo \"### Hello world! :rocket:\" >> $GITHUB_STEP_SUMMARY",
+          "shell": "bash",
         }
       ]
     }
