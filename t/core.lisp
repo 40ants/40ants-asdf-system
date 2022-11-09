@@ -9,6 +9,7 @@
 (in-package #:40ants-asdf-system-tests/core)
 
 
+;; TODO: remove me
 (deftest test-version-extraction
   (testing "Checking if it is possible to extract version from our changelog"
     (ok (equal (retrieve-system-version (asdf:find-system "40ants-asdf-system"))
