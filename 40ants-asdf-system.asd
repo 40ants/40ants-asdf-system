@@ -11,4 +11,5 @@
   :components ((:module "src"
                 :components ((:file "package")
                              (:file "version" :depends-on ("package"))
-                             (:file "system" :depends-on ("version"))))))
+                             (:file "system" :depends-on ("version")))))
+  :in-order-to ((test-op (test-op "40ants-asdf-system-tests"))))
