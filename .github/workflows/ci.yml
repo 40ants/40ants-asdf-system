@@ -83,11 +83,167 @@
       ]
     },
     "run-tests": {
-      "runs-on": "ubuntu-latest",
+      "strategy": {
+        "fail-fast": false,
+        "matrix": {
+          "os": [
+            "ubuntu-latest",
+            "macos-latest"
+          ],
+          "quicklisp": [
+            "ultralisp",
+            "quicklisp"
+          ],
+          "lisp": [
+            "sbcl",
+            "ccl-bin/1.12.1",
+            "abcl-bin",
+            "allegro",
+            "clasp",
+            "lispworks",
+            "mkcl",
+            "npt",
+            "ecl"
+          ],
+          "exclude": [
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "npt"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "npt"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "sbcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "sbcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "sbcl"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ccl-bin/1.12.1"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ccl-bin/1.12.1"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "ccl-bin/1.12.1"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ecl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ecl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "ecl"
+            }
+          ]
+        }
+      },
+      "runs-on": "${{ matrix.os }}",
       "env": {
-        "OS": "ubuntu-latest",
-        "QUICKLISP_DIST": "ultralisp",
-        "LISP": "sbcl"
+        "OS": "${{ matrix.os }}",
+        "QUICKLISP_DIST": "${{ matrix.quicklisp }}",
+        "LISP": "${{ matrix.lisp }}"
       },
       "steps": [
         {
@@ -111,7 +267,7 @@
           "uses": "actions/cache@v3",
           "with": {
             "path": "qlfile\nqlfile.lock\n~/.cache/common-lisp/\n~/.roswell\n/usr/local/etc/roswell\n/usr/local/bin/ros\n/usr/local/Cellar/roswell\n.qlot",
-            "key": "a-${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-ubuntu-latest-ultralisp-sbcl-${{ hashFiles('qlfile.lock', '*.asd') }}"
+            "key": "a-${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-${{ matrix.os }}-${{ matrix.quicklisp }}-${{ matrix.lisp }}-${{ hashFiles('qlfile.lock', '*.asd') }}"
           }
         },
         {
@@ -133,7 +289,7 @@
           "uses": "40ants/run-tests@v2",
           "with": {
             "asdf-system": "40ants-asdf-system",
-            "coveralls-token": "${{ secrets.github_token }}"
+            "coveralls-token": "\n${{ matrix.lisp == 'sbcl-bin' &&\n    matrix.os == 'ubuntu-latest' &&\n    matrix.quicklisp == 'ultralisp' &&\n    secrets.github_token }}"
           }
         }
       ]
