@@ -10,7 +10,7 @@
                 #:build-docs))
 (in-package #:40ants-asdf-system/ci)
 
-(defvar *lisp-implementations*
+(defparameter *lisp-implementations*
   (list "sbcl-bin"
         "ccl-bin/1.12.1"
         "abcl-bin"

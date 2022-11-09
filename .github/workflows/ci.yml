@@ -95,7 +95,7 @@
             "quicklisp"
           ],
           "lisp": [
-            "sbcl",
+            "sbcl-bin",
             "ccl-bin/1.12.1",
             "abcl-bin",
             "allegro",
@@ -115,21 +115,6 @@
               "os": "ubuntu-latest",
               "quicklisp": "quicklisp",
               "lisp": "npt"
-            },
-            {
-              "os": "ubuntu-latest",
-              "quicklisp": "quicklisp",
-              "lisp": "sbcl"
-            },
-            {
-              "os": "macos-latest",
-              "quicklisp": "quicklisp",
-              "lisp": "sbcl"
-            },
-            {
-              "os": "macos-latest",
-              "quicklisp": "ultralisp",
-              "lisp": "sbcl"
             },
             {
               "os": "ubuntu-latest",
