@@ -2,6 +2,12 @@
 
 # ChangeLog
 
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.3.0 (2022-11-09)
+
+* Now docs/changelog.lisp will be recognized when system version is extracted.
+
 <a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E2-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.2.0 (2022-11-07)
