@@ -16,7 +16,8 @@
   :by-cron "0 10 * * 1"
   :on-pull-request t
   :cache t
-  :jobs ((linter)
+  :jobs ((linter :asdf-systems ("40ants-asdf-system-docs")
+                 :check-imports t)
          (run-tests
           :os ("ubuntu-latest"
                "macos-latest")
@@ -24,6 +25,14 @@
                       "quicklisp")
           :lisp ("sbcl"
                  "ccl-bin/1.12.1"
+                 "abcl-bin"
+                 "allegro"
+                 "clasp"
+                 "clisp"
+                 "cmu-bin"
+                 "lispworks"
+                 "mkcl"
+                 "npt"
                  "ecl")
           :coverage t)))
 
@@ -33,4 +42,4 @@
   :on-pull-request t
   :by-cron "0 10 * * 1"
   :cache t 
-  :jobs ((build-docs :asdf-system "40ants-asdf-system/doc")))
+  :jobs ((build-docs :asdf-system "40ants-asdf-system-docs")))
