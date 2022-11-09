@@ -20,25 +20,28 @@
                  :check-imports t)
          (run-tests
           :os ("ubuntu-latest"
-               "macos-latest")
+               ;; "macos-latest"
+               )
           :quicklisp ("ultralisp"
-                      "quicklisp")
+                      ;; "quicklisp"
+                      )
           :lisp ("sbcl"
-                 "ccl-bin/1.12.1"
-                 "abcl-bin"
-                 "allegro"
-                 "clasp"
-                 "clisp"
+                 ;; "ccl-bin/1.12.1"
+                 ;; "abcl-bin"
+                 ;; "allegro"
+                 ;; "clasp"
+                 ;; "clisp"
                  ;; This CL implementation does not work in any matrix combinations
                  ;; "cmu-bin"
-                 "lispworks"
-                 "mkcl"
+                 ;; "lispworks"
+                 ;; "mkcl"
                  ;; ubuntu, ultralisp|quicklisp
-                 "npt"
-                 "ecl")
+                 ;; "npt"
+                 ;; "ecl"
+                 )
           ;; These combinations are failed for some reason:
-          :exclude ((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
-                    (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
+          ;; :exclude ((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
+          ;;           (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
           :coverage t)))
 
 
