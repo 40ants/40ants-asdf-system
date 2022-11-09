@@ -18,6 +18,9 @@
                            (make-pathname :directory (list :relative "src" "doc")
                                           :name "changelog"
                                           :type "lisp")
+                           (make-pathname :directory (list :relative "docs")
+                                          :name "changelog"
+                                          :type "lisp")
                            (make-pathname :name "changelog"
                                           :type "lisp"))))
       (loop for filename in filenames
