@@ -16,7 +16,8 @@
   :by-cron "0 10 * * 1"
   :on-pull-request t
   :cache t
-  :jobs ((linter)
+  :jobs ((linter :asdf-systems ("40ants-asdf-system-docs")
+                 :check-imports t)
          (run-tests
           :os ("ubuntu-latest"
                "macos-latest")
@@ -24,7 +25,20 @@
                       "quicklisp")
           :lisp ("sbcl"
                  "ccl-bin/1.12.1"
+                 "abcl-bin"
+                 "allegro"
+                 "clasp"
+                 "clisp"
+                 ;; This CL implementation does not work in any matrix combinations
+                 ;; "cmu-bin"
+                 "lispworks"
+                 "mkcl"
+                 ;; ubuntu, ultralisp|quicklisp
+                 "npt"
                  "ecl")
+          ;; These combinations are failed for some reason:
+          :exclude ((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
+                    (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
           :coverage t)))
 
 
@@ -33,4 +47,4 @@
   :on-pull-request t
   :by-cron "0 10 * * 1"
   :cache t 
-  :jobs ((build-docs :asdf-system "40ants-asdf-system/doc")))
+  :jobs ((build-docs :asdf-system "40ants-asdf-system-docs")))

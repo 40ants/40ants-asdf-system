@@ -9,6 +9,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.3.0 2022-11-09
+         "* Now docs/changelog.lisp will be recognized when system version is extracted.")
   (0.2.0 2022-11-07
          "* System was made non-package-inferred, to obliterate
             \"Computing just-done stamp ... but dependency ... wasn't done yet!\" ASDF warnings.
