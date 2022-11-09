@@ -2,9 +2,6 @@
   (:use #:cl)
   (:import-from #:40ants-asdf-system
                 #:retrieve-system-version)
-  (:import-from #:hamcrest/rove
-                #:contains
-                #:assert-that)
   (:import-from #:rove
                 #:testing
                 #:ok
