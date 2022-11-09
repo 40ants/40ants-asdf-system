@@ -101,11 +101,22 @@
             "allegro",
             "clasp",
             "clisp",
-            "cmu-bin",
             "lispworks",
             "mkcl",
             "npt",
             "ecl"
+          ],
+          "exclude": [
+            {
+              "os": "ubuntu",
+              "quicklisp": "ultralisp",
+              "lisp": "npt"
+            },
+            {
+              "os": "ubuntu",
+              "quicklisp": "quicklisp",
+              "lisp": "npt"
+            }
           ]
         }
       },

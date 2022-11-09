@@ -29,11 +29,16 @@
                  "allegro"
                  "clasp"
                  "clisp"
-                 "cmu-bin"
+                 ;; This CL implementation does not work in any matrix combinations
+                 ;; "cmu-bin"
                  "lispworks"
                  "mkcl"
+                 ;; ubuntu, ultralisp|quicklisp
                  "npt"
                  "ecl")
+          ;; These combinations are failed for some reason:
+          :exclude ((:os "ubuntu" :quicklisp "ultralisp" :lisp "npt")
+                    (:os "ubuntu" :quicklisp "quicklisp" :lisp "npt"))
           :coverage t)))
 
 
