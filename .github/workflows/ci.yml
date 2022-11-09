@@ -34,7 +34,7 @@
         {
           "name": "Get Current Month",
           "id": "current-month",
-          "run": "echo \"::set-output name=value::$(date -u \"+%Y-%m\")\"",
+          "run": "echo \"value=$(date -u \"+%Y-%m\")\" >> $GITHUB_OUTPUT",
           "shell": "bash"
         },
         {
@@ -102,7 +102,7 @@
         {
           "name": "Get Current Month",
           "id": "current-month",
-          "run": "echo \"::set-output name=value::$(date -u \"+%Y-%m\")\"",
+          "run": "echo \"value=$(date -u \"+%Y-%m\")\" >> $GITHUB_OUTPUT",
           "shell": "bash"
         },
         {
