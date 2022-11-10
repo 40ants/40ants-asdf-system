@@ -12,23 +12,24 @@
 
 (defparameter *lisp-implementations*
   (list "sbcl-bin"
-        "ccl-bin/1.12.1"
-        "abcl-bin"
-        "allegro"
-        "clasp"
-        ;; This CL implementation does not work in any matrix combinations
-        ;; "cmu-bin"
-        "lispworks"
-        "mkcl"
-        "npt"
-        "ecl") )
+        ;; "ccl-bin/1.12.1"
+        ;; "abcl-bin"
+        ;; "allegro"
+        ;; "clasp"
+        ;; ;; This CL implementation does not work in any matrix combinations
+        ;; ;; "cmu-bin"
+        ;; "lispworks"
+        ;; "mkcl"
+        ;; "npt"
+        ;; "ecl"
+        ) )
 
 
 (defworkflow ci
   :on-push-to "master"
   :by-cron "0 10 * * 1"
   :on-pull-request t
-  :cache t
+  ;; :cache t
   :jobs ((linter :asdf-systems ("40ants-asdf-system-docs"
                                 "40ants-asdf-system-tests")
                  :check-imports t)
