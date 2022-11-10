@@ -24,7 +24,7 @@
       "steps": [
         {
           "name": "Checkout Code",
-          "uses": "actions/checkout@v2"
+          "uses": "actions/checkout@v3"
         },
         {
           "name": "Grant All Perms to Make Cache Restoring Possible",
@@ -34,13 +34,13 @@
         {
           "name": "Get Current Month",
           "id": "current-month",
-          "run": "echo \"::set-output name=value::$(date -u \"+%Y-%m\")\"",
+          "run": "echo \"value=$(date -u \"+%Y-%m\")\" >> $GITHUB_OUTPUT",
           "shell": "bash"
         },
         {
           "name": "Cache Roswell Setup",
           "id": "cache",
-          "uses": "actions/cache@v2",
+          "uses": "actions/cache@v3",
           "with": {
             "path": "qlfile\nqlfile.lock\n~/.cache/common-lisp/\n~/.roswell\n/usr/local/etc/roswell\n/usr/local/bin/ros\n/usr/local/Cellar/roswell\n.qlot",
             "key": "a-${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-ubuntu-latest-quicklisp-sbcl-bin-${{ hashFiles('qlfile.lock', '*.asd') }}"
@@ -67,7 +67,7 @@
         },
         {
           "name": "Update Qlot",
-          "run": "qlot update || qlot update",
+          "run": "qlot update --no-deps",
           "shell": "bash"
         },
         {
@@ -77,7 +77,7 @@
         },
         {
           "name": "Run Linter",
-          "run": "qlot exec 40ants-linter --system \"40ants-asdf-system-docs\" --imports",
+          "run": "qlot exec 40ants-linter --system \"40ants-asdf-system-docs, 40ants-asdf-system-tests\" --imports",
           "shell": "bash"
         }
       ]
@@ -95,12 +95,11 @@
             "quicklisp"
           ],
           "lisp": [
-            "sbcl",
+            "sbcl-bin",
             "ccl-bin/1.12.1",
             "abcl-bin",
             "allegro",
             "clasp",
-            "clisp",
             "lispworks",
             "mkcl",
             "npt",
@@ -116,6 +115,111 @@
               "os": "ubuntu-latest",
               "quicklisp": "quicklisp",
               "lisp": "npt"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ccl-bin/1.12.1"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ccl-bin/1.12.1"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "ccl-bin/1.12.1"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ecl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ecl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "ecl"
             }
           ]
         }
@@ -129,7 +233,7 @@
       "steps": [
         {
           "name": "Checkout Code",
-          "uses": "actions/checkout@v2"
+          "uses": "actions/checkout@v3"
         },
         {
           "name": "Grant All Perms to Make Cache Restoring Possible",
@@ -139,13 +243,13 @@
         {
           "name": "Get Current Month",
           "id": "current-month",
-          "run": "echo \"::set-output name=value::$(date -u \"+%Y-%m\")\"",
+          "run": "echo \"value=$(date -u \"+%Y-%m\")\" >> $GITHUB_OUTPUT",
           "shell": "bash"
         },
         {
           "name": "Cache Roswell Setup",
           "id": "cache",
-          "uses": "actions/cache@v2",
+          "uses": "actions/cache@v3",
           "with": {
             "path": "qlfile\nqlfile.lock\n~/.cache/common-lisp/\n~/.roswell\n/usr/local/etc/roswell\n/usr/local/bin/ros\n/usr/local/Cellar/roswell\n.qlot",
             "key": "a-${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-${{ matrix.os }}-${{ matrix.quicklisp }}-${{ matrix.lisp }}-${{ hashFiles('qlfile.lock', '*.asd') }}"

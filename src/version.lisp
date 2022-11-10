@@ -21,3 +21,13 @@
                             (version-symbol (car version-form))
                             (version (symbol-name version-symbol)))
                        version))))
+
+
+(defun retrieve-system-version (system)
+  (let* ((filename (let ((path (path-to-changelog system)))
+                     (etypecase path
+                       (string (uiop:parse-unix-namestring path))
+                       (pathname path))))
+         (full-path (asdf:system-relative-pathname system filename)))
+    (when (probe-file full-path)
+      (extract-version-from-changelog full-path))))
