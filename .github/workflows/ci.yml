@@ -67,7 +67,7 @@
         },
         {
           "name": "Update Qlot",
-          "run": "qlot update || qlot update",
+          "run": "qlot update --no-deps",
           "shell": "bash"
         },
         {
