@@ -2,16 +2,35 @@
 
 
 (defclass asdf/interface::40ants-asdf-system (asdf/interface:package-inferred-system)
-  ((version-from-changelog :initform nil
-                           :type (or null string)
-                           :reader asdf:component-version
-                           :documentation "This slot is used instead of asdf/component:version because it is overwritten by ASDF function parse-component-form and there is no other way to save a version from the changelog."))
+  ((path-to-changelog :initform "docs/changelog.lisp"
+                      :initarg :path-to-changelog
+                      :type (or string pathname)
+                      :documentation "System relative path to a changelog, if string is given, then it will be processed using uiop:parse-unix-namestring function."
+                      :reader path-to-changelog)
+   (path-to-readme :initform "README.md"
+                      :initarg :path-to-readme
+                      :type (or string pathname)
+                      :documentation "System relative path to a README.md, if string is given, then it will be processed using uiop:parse-unix-namestring function."
+                      :reader path-to-readme))
   (:documentation "This ASDF system class takes it's version from src/changelog.lisp"))
 
 
-(defmethod shared-initialize :after ((system asdf/interface::40ants-asdf-system) slot-names &rest rest)
-  (declare (ignore rest slot-names))
-  (unless (asdf:component-version system)
-    (setf (slot-value system 'version-from-changelog)
-          (retrieve-system-version system))))
 
+(defmethod asdf:operate :after ((op asdf:define-op) (system asdf/interface::40ants-asdf-system) &rest rest)
+  (declare (ignore rest))
+  (let ((version nil))
+    (flet ((get-version ()
+             (or version
+                 (setf version
+                       (retrieve-system-version system)))))
+      (unless (asdf:component-version system)
+        (setf (asdf:component-version system)
+              (get-version)))
+      
+      (unless (asdf:system-version system)
+        (setf (slot-value system 'asdf:version)
+              (get-version)))
+      
+      (unless (asdf:system-long-description system)
+        (setf (slot-value system 'asdf::long-description)
+              (retrieve-system-readme system))))))
