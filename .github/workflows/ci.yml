@@ -56,35 +56,10 @@
       ]
     },
     "run-tests": {
-      "strategy": {
-        "fail-fast": false,
-        "matrix": {
-          "os": [
-            "ubuntu-latest",
-            "macos-latest"
-          ],
-          "quicklisp": [
-            "ultralisp",
-            "quicklisp"
-          ],
-          "exclude": [
-            {
-              "os": "ubuntu-latest",
-              "quicklisp": "ultralisp",
-              "lisp": "npt"
-            },
-            {
-              "os": "ubuntu-latest",
-              "quicklisp": "quicklisp",
-              "lisp": "npt"
-            }
-          ]
-        }
-      },
-      "runs-on": "${{ matrix.os }}",
+      "runs-on": "ubuntu-latest",
       "env": {
-        "OS": "${{ matrix.os }}",
-        "QUICKLISP_DIST": "${{ matrix.quicklisp }}",
+        "OS": "ubuntu-latest",
+        "QUICKLISP_DIST": "ultralisp",
         "LISP": "sbcl-bin"
       },
       "steps": [
@@ -104,7 +79,7 @@
           "uses": "40ants/run-tests@v2",
           "with": {
             "asdf-system": "40ants-asdf-system",
-            "coveralls-token": "\n${{ matrix.lisp == 'sbcl-bin' &&\n    matrix.os == 'ubuntu-latest' &&\n    matrix.quicklisp == 'ultralisp' &&\n    secrets.github_token }}"
+            "coveralls-token": "${{ secrets.github_token }}"
           }
         }
       ]

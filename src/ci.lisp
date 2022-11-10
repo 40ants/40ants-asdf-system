@@ -35,28 +35,30 @@
                  :check-imports t)
          (run-tests
           :os ("ubuntu-latest"
-               "macos-latest")
+               ;; "macos-latest"
+               )
           :quicklisp ("ultralisp"
-                      "quicklisp")
+                      ;; "quicklisp"
+                      )
           :lisp *lisp-implementations*
-          :exclude (append
-                    ;; These combinations are failed for some reason:
-                    '((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
-                      (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
-                    ;; All implementations except SBCL and NPT we'll check only on Linux
-                    ;; and Ultralisp dist.     
-                    (loop for lisp in *lisp-implementations*
-                          unless (or (string-equal lisp "sbcl-bin")
-                                     (string-equal lisp "npt"))
-                            append (list (list :os "ubuntu-latest"
-                                               :quicklisp "quicklisp"
-                                               :lisp lisp)
-                                         (list :os "macos-latest"
-                                               :quicklisp "quicklisp"
-                                               :lisp lisp)
-                                         (list :os "macos-latest"
-                                               :quicklisp "ultralisp"
-                                               :lisp lisp))))
+          ;; :exclude (append
+          ;;           ;; These combinations are failed for some reason:
+          ;;           '((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
+          ;;             (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
+          ;;           ;; All implementations except SBCL and NPT we'll check only on Linux
+          ;;           ;; and Ultralisp dist.     
+          ;;           (loop for lisp in *lisp-implementations*
+          ;;                 unless (or (string-equal lisp "sbcl-bin")
+          ;;                            (string-equal lisp "npt"))
+          ;;                   append (list (list :os "ubuntu-latest"
+          ;;                                      :quicklisp "quicklisp"
+          ;;                                      :lisp lisp)
+          ;;                                (list :os "macos-latest"
+          ;;                                      :quicklisp "quicklisp"
+          ;;                                      :lisp lisp)
+          ;;                                (list :os "macos-latest"
+          ;;                                      :quicklisp "ultralisp"
+          ;;                                      :lisp lisp))))
           :coverage t)))
 
 
