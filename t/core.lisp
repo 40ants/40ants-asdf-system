@@ -9,8 +9,9 @@
 (in-package #:40ants-asdf-system-tests/core)
 
 
-;; TODO: remove me
 (deftest test-version-extraction
   (testing "Checking if it is possible to extract version from our changelog"
-    (ok (equal (retrieve-system-version (asdf:find-system "40ants-asdf-system"))
-               "0.1.0"))))
+    (asdf:load-asd (asdf:system-relative-pathname (asdf:registered-system "40ants-asdf-system")
+                                                  (uiop:parse-unix-namestring "t/test-40ants-system.asd")))
+    (ok (equal (retrieve-system-version (asdf:find-system "test-40ants-system"))
+               "0.2.0"))))
