@@ -26,10 +26,14 @@
       (unless (asdf:component-version system)
         (setf (asdf:component-version system)
               (get-version)))
-      
-      (unless (asdf:system-version system)
-        (setf (slot-value system 'asdf:version)
-              (get-version)))
+
+      ;; ASDF before 3.3.2.11 didn't provide version slot on systems
+      (when (find-symbol "SYSTEM-VERSION" (find-package "ASDF"))
+        (unless (uiop:symbol-call "ASDF"
+                                  "SYSTEM-VERSION"
+                                  system)
+          (setf (slot-value system 'asdf:version)
+                (get-version))))
       
       (unless (asdf:system-long-description system)
         (setf (slot-value system 'asdf::long-description)
