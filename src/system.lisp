@@ -15,14 +15,15 @@
   (:documentation "This ASDF system class takes it's version from src/changelog.lisp"))
 
 
-
-(defmethod asdf:operate :after ((op asdf:define-op) (system asdf/interface::40ants-asdf-system) &rest rest)
+(defmethod asdf:operate :after ((op asdf:load-op) (system asdf/interface::40ants-asdf-system) &rest rest)
   (declare (ignore rest))
+
   (let ((version nil))
     (flet ((get-version ()
              (or version
                  (setf version
                        (retrieve-system-version system)))))
+
       (unless (asdf:component-version system)
         (setf (asdf:component-version system)
               (get-version)))
