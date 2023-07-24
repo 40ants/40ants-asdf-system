@@ -15,9 +15,7 @@
   (:documentation "This ASDF system class takes it's version from src/changelog.lisp"))
 
 
-(defmethod asdf:operate :after ((op asdf:load-op) (system asdf/interface::40ants-asdf-system) &rest rest)
-  (declare (ignore rest))
-
+(defun set-40ants-system-version (system)
   (let ((version nil))
     (flet ((get-version ()
              (or version
@@ -39,3 +37,15 @@
       (unless (asdf:system-long-description system)
         (setf (slot-value system 'asdf::long-description)
               (retrieve-system-readme system))))))
+
+
+(defmethod asdf:operate :before ((op asdf:load-op) (system asdf/interface::40ants-asdf-system) &rest rest)
+  "This method is called when user does ASDF:LOAD-SYSTEM."
+  (declare (ignore rest))
+  (set-40ants-system-version system))
+
+
+(defmethod asdf:operate :before ((op asdf:build-op) (system asdf/interface::40ants-asdf-system) &rest rest)
+  "This method is called when user does ASDF:MAKE."
+  (declare (ignore rest))
+  (set-40ants-system-version system))

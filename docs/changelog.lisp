@@ -9,6 +9,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.3.2 2023-07-24
+         "* Fixed system version when it is loaded as a result of call to asdf make.")
   (0.3.1 2023-02-10
          "* Now it is possible to load the library on ASDF 3.3.1.")
   (0.3.0 2022-11-09
