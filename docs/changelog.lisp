@@ -9,6 +9,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.3.3 2023-09-23
+         "* Fixed errors caused by different versions of UIOP installed because of explicit dependency. Now dependency was removed.")
   (0.3.2 2023-07-24
          "* Fixed system version when it is loaded as a result of call to asdf make.")
   (0.3.1 2023-02-10
