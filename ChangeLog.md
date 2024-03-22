@@ -2,6 +2,18 @@
 
 # ChangeLog
 
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E3-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.3.3 (2023-09-23)
+
+* Fixed errors caused by different versions of `UIOP` installed because of explicit dependency. Now dependency was removed.
+
+<a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E2-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.3.2 (2023-07-24)
+
+* Fixed system version when it is loaded as a result of call to asdf make.
+
 <a id="x-2840ANTS-ASDF-SYSTEM-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.3.1 (2023-02-10)

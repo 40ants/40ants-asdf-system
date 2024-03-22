@@ -7,13 +7,9 @@
 ## 40ANTS-ASDF-SYSTEM ASDF System Details
 
 * Description: Provides a class for being used instead of asdf:package-inferred-system.
-
 * Licence: `BSD`
-
 * Author: Alexander Artemenko
-
 * Bug tracker: [https://github.com/40ants/40ants-asdf-system/issues][0109]
-
 * Source control: [GIT][507c]
 
 [![](https://github-actions.40ants.com/40ants/40ants-asdf-system/matrix.svg?only=ci.run-tests)][0d83]
@@ -56,13 +52,9 @@ To use this class, mention it in the `ASDF` system definition like this:
 ### 40ANTS-ASDF-SYSTEM ASDF System Details
 
 * Description: Provides a class for being used instead of asdf:package-inferred-system.
-
 * Licence: `BSD`
-
 * Author: Alexander Artemenko
-
 * Bug tracker: [https://github.com/40ants/40ants-asdf-system/issues][0109]
-
 * Source control: [GIT][507c]
 
 
