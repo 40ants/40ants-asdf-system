@@ -8,6 +8,7 @@
 (defchangelog (:ignore-words ("SLY"
                               "ASDF"
                               "REPL"
+                              "UIOP"
                               "HTTP"))
   (0.3.3 2023-09-23
          "* Fixed errors caused by different versions of UIOP installed because of explicit dependency. Now dependency was removed.")
