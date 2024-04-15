@@ -5,5 +5,5 @@
   :description "Provides CI configuration for 40ants-asdf-system."
   :bug-tracker "https://github.com/40ants/40ants-asdf-system/issues"
   :source-control (:git "https://github.com/40ants/40ants-asdf-system")
-  :pathname "ci"
+  :pathname "src"
   :depends-on ("40ants-asdf-system-ci/ci"))
