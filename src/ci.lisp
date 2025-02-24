@@ -43,6 +43,14 @@
                     ;; These combinations are failed for some reason:
                     '((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
                       (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
+                    ;; Allegro is not can't be installed from some point of time
+                    ;; because of this error:
+                    ;; Lisp has expired. Please download a new license file from http://franz.com/products/express/
+                    '((:lisp "allegro"))
+                    ;; Clasp 6.0.1 does not compile
+                    '((:lisp "clasp"))
+                    ;; MKCL 1.1.11 does not compile
+                    '((:lisp "mkcl"))
                     ;; All implementations except SBCL and NPT we'll check only on Linux
                     ;; and Ultralisp dist.     
                     (loop for lisp in *lisp-implementations*
