@@ -51,7 +51,7 @@
         },
         {
           "name": "Run Linter",
-          "run": "qlot exec 40ants-linter --system \"40ants-asdf-system\"",
+          "run": "qlot exec 40ants-linter --system \"40ants-asdf-system, 40ants-asdf-system-docs, 40ants-asdf-system-tests\" --imports",
           "shell": "bash"
         }
       ]
@@ -64,13 +64,141 @@
             "ubuntu-latest",
             "macos-latest"
           ],
+          "exclude": [
+            {
+              "lisp": "npt"
+            },
+            {
+              "lisp": "allegro"
+            },
+            {
+              "lisp": "lispworks"
+            },
+            {
+              "lisp": "clasp"
+            },
+            {
+              "lisp": "mkcl"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ccl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ccl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "ccl-bin"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "abcl-bin"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "allegro"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "clasp"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "lispworks"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "mkcl"
+            },
+            {
+              "os": "ubuntu-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ecl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "quicklisp",
+              "lisp": "ecl"
+            },
+            {
+              "os": "macos-latest",
+              "quicklisp": "ultralisp",
+              "lisp": "ecl"
+            }
+          ],
           "quicklisp": [
             "ultralisp",
             "quicklisp"
           ],
           "lisp": [
-            "sbcl",
-            "ccl",
+            "sbcl-bin",
+            "ccl-bin",
+            "abcl-bin",
+            "allegro",
+            "clasp",
+            "lispworks",
+            "mkcl",
+            "npt",
             "ecl"
           ]
         }

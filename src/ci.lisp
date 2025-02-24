@@ -12,7 +12,7 @@
 
 (defparameter *lisp-implementations*
   (list "sbcl-bin"
-        "ccl-bin/1.12.1"
+        "ccl-bin"
         "abcl-bin"
         "allegro"
         "clasp"
@@ -29,7 +29,8 @@
   :by-cron "0 10 * * 1"
   :on-pull-request t
   :cache t
-  :jobs ((linter :asdf-systems ("40ants-asdf-system-docs"
+  :jobs ((linter :asdf-systems ("40ants-asdf-system"
+                                "40ants-asdf-system-docs"
                                 "40ants-asdf-system-tests")
                  :check-imports t)
          (run-tests
@@ -39,9 +40,18 @@
                       "quicklisp")
           :lisp *lisp-implementations*
           :exclude (append
-                    ;; These combinations are failed for some reason:
-                    '((:os "ubuntu-latest" :quicklisp "ultralisp" :lisp "npt")
-                      (:os "ubuntu-latest" :quicklisp "quicklisp" :lisp "npt"))
+                    ;; NPT does not compile on all OS now :(
+                    '((:lisp "npt"))
+                    ;; Allegro is not can't be installed from some point of time
+                    ;; because of this error:
+                    ;; Lisp has expired. Please download a new license file from http://franz.com/products/express/
+                    '((:lisp "allegro"))
+                    ;; Lispworks does not compile anymore
+                    '((:lisp "lispworks"))
+                    ;; Clasp 6.0.1 does not compile
+                    '((:lisp "clasp"))
+                    ;; MKCL 1.1.11 does not compile
+                    '((:lisp "mkcl"))
                     ;; All implementations except SBCL and NPT we'll check only on Linux
                     ;; and Ultralisp dist.     
                     (loop for lisp in *lisp-implementations*
