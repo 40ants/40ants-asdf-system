@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+    <channel>
+        <title>40ants-asdf-system-docs ChangeLog</title>
+        <generator>xml-emitter</generator>
+        <language>en-us</language>
+        <item>
+            <title>0.3.3  (2023-09-23)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Fixed errors caused by different versions of &lt;code&gt;UIOP&lt;/code&gt; installed because of explicit dependency. Now dependency was removed.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.2  (2023-07-24)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Fixed system version when it is loaded as a result of call to asdf make.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.1  (2023-02-10)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Now it is possible to load the library on &lt;code&gt;ASDF&lt;/code&gt; 3.3.1.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.0  (2022-11-09)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Now docs/changelog.lisp will be recognized when system version is extracted.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.2.0  (2022-11-07)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;System was made non-package-inferred, to obliterate
+&amp;quot;Computing just-done stamp ... but dependency ... wasn&apos;t done yet!&amp;quot; &lt;code&gt;ASDF&lt;/code&gt; warnings.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;You will find more information about this warning in this issue:&lt;/p&gt;&lt;p&gt;https://gitlab.common-lisp.net/asdf/asdf/-/issues/132&lt;/p&gt;</description>
+            <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.1.0  (2022-08-07)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Initial version.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+        </item>
+    </channel>
+</rss>
